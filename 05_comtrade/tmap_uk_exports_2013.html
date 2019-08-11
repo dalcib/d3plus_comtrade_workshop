@@ -1,31 +1,58 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
- 
-<head>
-  <meta charset="utf-8">
-  <title>COMTRADE: Tree Map of UK Exports in 2013</title>
- 
-  <!-- load D3js -->
-  <script src="/js/d3.js"></script>
-  
-  <!-- load D3plus after D3js -->
-  <script src="/js/d3plus.js"></script>
-</head>
- 
-<body>
-  <div id="viz"></div>
-  
-  <script>
-  
-  // Step 1: Create a tree map of 4 digit HS products exported by the UK
-  // Things to think about:
-  // -- what will the API call to get this data be?
-  
-  // Step 2: Remove the sizing threshold
+  <head>
+    <meta charset="utf-8" />
+    <title>COMTRADE: Tree Map of UK Exports in 2013</title>
 
-  // Step 3: Use attributes from the OEC
-  // Use this API call: http://atlas.media.mit.edu/attr/hs/en/
-  // Set the nesting to use the 2 digit code above each product code
-  
-  </script>
-</body>
+    <!-- load D3js -->
+    <script src="/js/d3.js"></script>
+
+    <!-- load D3plus after D3js -->
+    <script src="/js/d3plus.js"></script>
+  </head>
+
+  <body>
+    <div id="viz"></div>
+
+    <script>
+      d3.json('json/oec_country_attrs.json', (e, attrs) => {
+        attrs_lookup = {}
+        attrs.data.forEach(function(a) {
+          if (a['display_id']) {
+            attrs_lookup[a['display_id']] = a
+          }
+        })
+
+        var visualization = d3plus
+          .viz()
+          .container('#viz')
+          .data('json/tmap_uk_exports.json', function(data) {
+            data.dataset.forEach(function(d) {
+              d['hs2'] = d['cmdCode'].substr(0, 2)
+              d['color'] = attrs_lookup[d['cmdCode']]['color']
+              d['hs_section'] = attrs_lookup[d['cmdCode']]['id'].substr(0, 2)
+            })
+            //console.log(data.)
+            return data.dataset
+          })
+          .type('tree_map')
+          .id(['hs_section', 'hs2', 'cmdCode'])
+          .text('cmdDescE')
+          .size('TradeValue')
+          .size({ threshold: true })
+          .color('color')
+          .depth(2)
+          .draw()
+      })
+      // Step 1: Create a tree map of 4 digit HS products exported by the UK
+      // Things to think about:
+      // -- what will the API call to get this data be?
+
+      // Step 2: Remove the sizing threshold
+
+      // Step 3: Use attributes from the OEC
+      // Use this API call: http://atlas.media.mit.edu/attr/hs/en/
+      // Set the nesting to use the 2 digit code above each product code
+    </script>
+  </body>
+</html>

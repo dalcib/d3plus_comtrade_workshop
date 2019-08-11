@@ -1,0 +1,32 @@
+{
+  "name": "d3plus_comtrade_workshop",
+  "version": "1.0.0",
+  "description": "Download this directory as a zip OR if you have git installed locally, clone the repository:",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dalcib/d3plus_comtrade_workshop.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dalcib/d3plus_comtrade_workshop/issues"
+  },
+  "homepage": "https://github.com/dalcib/d3plus_comtrade_workshop#readme",
+  "dependencies": {
+    "d3": "^5.9.7",
+    "d3plus": "^2.0.0-alpha.22",
+    "d3plus-react": "^0.5.7",
+    "d3plus-viz": "^0.12.37",
+    "topojson": "^3.0.2",
+    "tsd-jsdoc": "^2.3.1"
+  },
+  "devDependencies": {
+    "@types/d3": "^5.7.2",
+    "@types/topojson": "^3.2.2"
+  }
+}
