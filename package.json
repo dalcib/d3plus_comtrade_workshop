@@ -4,7 +4,8 @@
   "description": "Download this directory as a zip OR if you have git installed locally, clone the repository:",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "jsdoc": "jsdoc -t node_modules/@otris/jsdoc-tsd -r d3plus.v2.0.0-alpha.22.full.js"
   },
   "repository": {
     "type": "git",
@@ -18,10 +19,12 @@
   },
   "homepage": "https://github.com/dalcib/d3plus_comtrade_workshop#readme",
   "dependencies": {
+    "@otris/jsdoc-tsd": "^1.0.4",
     "d3": "^5.9.7",
     "d3plus": "^2.0.0-alpha.22",
     "d3plus-react": "^0.5.7",
     "d3plus-viz": "^0.12.37",
+    "jsdoc": "^3.6.3",
     "topojson": "^3.0.2",
     "tsd-jsdoc": "^2.3.1"
   },
