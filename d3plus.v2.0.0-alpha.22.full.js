@@ -9528,6 +9528,7 @@
 
   /**
       @function textWrap
+      @namespace 
       @desc Based on the defined styles and dimensions, breaks a string into an array of strings for each line of text.
   */
 
@@ -16092,7 +16093,7 @@
         if (this._select === void 0) {
           this.select(_select("body").append("svg").attr("width", "".concat(this._width, "px")).attr("height", "".concat(this._height, "px")).node());
         }
-        /**
+        /*/*
          * Declares some commonly used variables.
          */
 
@@ -16114,7 +16115,7 @@
         var tickGet = typeof tickValue !== "function" ? function () {
           return tickValue;
         } : tickValue;
-        /**
+        /*/*
          * Zeros out the margins for re-calculation.
          */
 
@@ -16125,7 +16126,7 @@
           left: 0
         };
         var labels, range$1, ticks;
-        /**
+        /*/*
          * (Re)calculates the internal d3 scale
          * @param {} newRange
          */
@@ -16134,7 +16135,7 @@
           var _this2 = this;
 
           var newRange = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : this._range;
-          /**
+          /*/*
            * Calculates the internal "range" array to use, including
            * fallbacks if not specified with the "range" method.
            */
@@ -16181,7 +16182,7 @@
               range$1 = [range$1[0] + pad, range$1[1] - pad];
             }
           }
-          /**
+          /*/*
            * Sets up the initial d3 scale, using this._domain and the
            * previously defined range variable.
            */
@@ -16192,7 +16193,7 @@
           if (this._d3Scale.paddingInner) this._d3Scale.paddingInner(this._paddingInner);
           if (this._d3Scale.paddingOuter) this._d3Scale.paddingOuter(this._paddingOuter);
           if (this._d3Scale.rangeRound) this._d3Scale.rangeRound(range$1);else this._d3Scale.range(range$1);
-          /**
+          /*/*
            * Constructs a separate "negative only" scale for logarithmic
            * domains, as they cannot pass zero.
            */
@@ -16222,7 +16223,7 @@
               (_domain[0] < 0 ? this._d3ScaleNegative : this._d3Scale).domain([_domain[0], Math.sign(_domain[0])]).range([_range[0], _range[0] + zero]);
             }
           }
-          /**
+          /*/*
            * Determines the of values array to use
            * for the "ticks" and the "labels"
            */
@@ -16246,7 +16247,7 @@
           labels = labels.sort(function (a, b) {
             return _this2._getPosition(a) - _this2._getPosition(b);
           });
-          /**
+          /*/*
            * Get the smallest suffix.
            */
 
@@ -16272,7 +16273,7 @@
               }
             }
           }
-          /**
+          /*/*
            * Removes ticks when they overlap other ticks.
            */
 
@@ -16297,7 +16298,7 @@
         }
 
         setScale.bind(this)();
-        /**
+        /*/*
          * Calculates the space available for a given label.
          * @param {Object} datum
          */
@@ -16317,7 +16318,7 @@
             return min([prevSpace, nextSpace]) * 2;
           }
         }
-        /**
+        /*/*
          * Constructs the tick formatter function.
          */
 
@@ -16357,7 +16358,7 @@
             return formatAbbreviate(n, _this3._locale);
           }
         };
-        /**
+        /*/*
          * Pre-calculates the size of the title, if defined, in order
          * to adjust the internal margins.
          */
@@ -16384,7 +16385,7 @@
         if (this._shape === "Rect") hBuff /= 2;
         if (typeof wBuff === "function") wBuff = max(ticks.map(wBuff));
         if (this._shape !== "Circle") wBuff /= 2;
-        /**
+        /*/*
          * Calculates the space each label would take up, given
          * the provided this._space size.
          */
@@ -16404,7 +16405,7 @@
             position: position
           };
         });
-        /**
+        /*/*
          * Calculates the text wrapping and size of a given textData object.
          * @param {Object} datum
          */
@@ -16447,7 +16448,7 @@
             return Object.assign(datum, res);
           });
         }
-        /**
+        /*/*
          * "spillover" will contain the pixel spillover of the first and last label,
          * and then adjust the scale range accordingly.
          */
@@ -24697,7 +24698,7 @@
           stops.enter().append("stop").merge(stops).attr("offset", function (d, i) {
             return "".concat(i / (colors.length - 1) * 100, "%");
           }).attr("stop-color", String);
-          /** determines the width of buckets */
+          /*/* determines the width of buckets */
 
           var bucketWidth = function bucketWidth(d, i) {
             var w = Math.abs(axisScale(ticks[i + 1]) - axisScale(d));
@@ -27568,6 +27569,16 @@
    *
    * Usually you don't want to override the `order`, `fn` and `onLoad` props.
    * All the other properties are configurations that could be tweaked.
+   * @namespace Modifiers
+   */
+
+  /**
+   * Modifiers are plugins used to alter the behavior of your poppers.<br />
+   * Popper.js uses a set of 9 modifiers to provide all the basic functionalities
+   * needed by the library.
+   *
+   * Usually you don't want to override the `order`, `fn` and `onLoad` props.
+   * All the other properties are configurations that could be tweaked.
    * @namespace modifiers
    */
 
@@ -27579,6 +27590,7 @@
      * It will read the variation of the `placement` property.<br />
      * It can be one either `-end` or `-start`.
      * @memberof modifiers
+     * @namespace
      * @inner
      */
     shift: {
@@ -27628,6 +27640,7 @@
      * > You can read more on this at this [issue](https://github.com/FezVrasta/popper.js/issues/373).
      *
      * @memberof modifiers
+     * @namespace
      * @inner
      */
     offset: {
@@ -27661,6 +27674,7 @@
      * the boundaries in order to remain attached to the edge of the reference.
      *
      * @memberof modifiers
+     * @namespace
      * @inner
      */
     preventOverflow: {
@@ -27703,6 +27717,7 @@
      * It cares only about the first axis. You can still have poppers with margin
      * between the popper and its reference element.
      * @memberof modifiers
+     * @namespace
      * @inner
      */
     keepTogether: {
@@ -27724,6 +27739,7 @@
      *
      * It has no effect if no `arrowElement` is provided.
      * @memberof modifiers
+     * @namespace
      * @inner
      */
     arrow: {
@@ -27749,6 +27765,7 @@
      * **NOTE:** this modifier will interrupt the current update cycle and will
      * restart it if it detects the need to flip the placement.
      * @memberof modifiers
+     * @namespace
      * @inner
      */
     flip: {
@@ -27807,6 +27824,7 @@
      * By default, when this modifier is disabled, the popper will be placed outside
      * the reference element.
      * @memberof modifiers
+     * @namespace
      * @inner
      */
     inner: {
@@ -27828,6 +27846,7 @@
      *
      * Requires the `preventOverflow` modifier before it in order to work.
      * @memberof modifiers
+     * @namespace
      * @inner
      */
     hide: {
@@ -27854,6 +27873,7 @@
      * to change in future major versions of the library.
      *
      * @memberof modifiers
+     * @namespace
      * @inner
      */
     computeStyle: {
@@ -27901,6 +27921,7 @@
      * Just disable this modifier and define your own to achieve the desired effect.
      *
      * @memberof modifiers
+     * @namespace
      * @inner
      */
     applyStyle: {
@@ -27958,6 +27979,7 @@
    * ```
    * @type {Object}
    * @static
+   * @namespace
    * @memberof Popper
    */
 
@@ -29149,7 +29171,7 @@
               if (freeGlobal.global === freeGlobal || freeGlobal.window === freeGlobal || freeGlobal.self === freeGlobal) {
                 root = freeGlobal;
               }
-              /**
+              /*/*
                * The `punycode` object.
                * @name punycode
                * @type Object
@@ -41237,6 +41259,7 @@
   /**
       @class Viz
       @extends external:BaseClass
+      @namespace
       @desc Creates an x/y plot based on an array of data. If *data* is specified, immediately draws the tree map based on the specified array and returns the current class instance. If *data* is not specified on instantiation, it can be passed/updated after instantiation using the [data](#treemap.data) method. See [this example](https://d3plus.org/examples/d3plus-treemap/getting-started/) for help getting started using the treemap generator.
   */
 
@@ -41857,6 +41880,7 @@
           @memberof Viz
           @desc If *value* is specified, sets the active method to the specified function and returns the current class instance.
           @param {Function} [*value*]
+          @instance
           @chainable
       */
 
@@ -41880,6 +41904,7 @@
           @desc If *value* is specified, sets the aggregation method for each key in the object and returns the current class instance.
           @param {Object} [*value*]
           @chainable
+          @inner
       */
 
     }, {
@@ -41904,6 +41929,7 @@
           @desc If *value* is specified, sets the config method for the back button and returns the current class instance.
           @param {Object} [*value*]
           @chainable
+          @function
       */
 
     }, {

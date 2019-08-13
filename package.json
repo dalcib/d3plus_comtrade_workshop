@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "jsdoc": "jsdoc -t node_modules/@otris/jsdoc-tsd -r d3plus.v2.0.0-alpha.22.full.js"
+    "jsdoc": "jsdoc -t node_modules/@otris/jsdoc-tsd -r ./d3plus/Geomap.js"
   },
   "repository": {
     "type": "git",

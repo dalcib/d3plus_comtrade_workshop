@@ -25,6 +25,8 @@
         { value: 1, name: 'zeta' },
       ]
 
+      console.log(d3plus.config())
+
       // instantiate d3plus
       var visualization = d3plus
         .viz()
@@ -36,6 +38,7 @@
         .text('name')
         .draw()
 
+      console.log(d3plus.config())
       // Step 1: Create a pie chart
       // Need to tell d3plus the following:
       // -- the container HTML element to put your visualizaiton
