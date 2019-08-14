@@ -1,6 +1,6 @@
-https://comtrade.un.org/api/get?max=500&type=C&freq=A&px=HS&ps=2018%2C2017%2C2016%2C2015&r=76&p=699&rg=2&cc=AG2&fmt=json
+https://comtrade.un.org/api/get?max=50000&type=C&freq=A&px=HS&ps=2018%2C2017%2C2016%2C2015%2C2014&r=76&p=699&rg=2&cc=AG2&fmt=json
 
-https://comtrade.un.org/api/get?fmt=json&max=50000&type=C&head=M&freq=A&r=699&ps=now&px=HS&p=76&rg=1&cc=AG4
+https://comtrade.un.org/api/get?max=50000&type=C&head=M&px=HS&freq=A&r=699&ps=2018%2C2017%2C2016%2C2015%2C2014&p=76&rg=1&cc=AG6&fmt=json
 
                  ,"max=",maxrec,"&" #maximum no. of records returned
                  ,"type=",type,"&" #type of trade (c=commodities)
@@ -26,7 +26,7 @@ https://comtrade.un.org/api/get?fmt=json&max=50000&type=C&head=M&freq=A&r=699&ps
 
     {
       "pfCode": "H4",
-      "yr": 2016,
+          "yr": 2016,
       "period": 2016,
       "periodDesc": "2016",
       "aggrLevel": 2,
@@ -34,7 +34,7 @@ https://comtrade.un.org/api/get?fmt=json&max=50000&type=C&head=M&freq=A&r=699&ps
       "rgCode": 2,
       "rgDesc": "Export",
       "rtCode": 76,
-      "rtTitle": "Brazil",
+      "rtTitle": "Brazconst il",
       "rt3ISO": "BRA",
       "ptCode": 699,
       "ptTitle": "India",
@@ -46,8 +46,8 @@ https://comtrade.un.org/api/get?fmt=json&max=50000&type=C&head=M&freq=A&r=699&ps
       "cstDesc": "",
       "motCode": "",
       "motDesc": "",
-      "cmdCode": "01",
-      "cmdDescE": "Animals; live",
+          "cmdCode": "01",
+          "cmdDescE": "Animals; live",
       "qtCode": 1,
       "qtDesc": "No Quantity",
       "qtAltCode": null,
@@ -56,11 +56,51 @@ https://comtrade.un.org/api/get?fmt=json&max=50000&type=C&head=M&freq=A&r=699&ps
       "AltQuantity": null,
       "NetWeight": null,
       "GrossWeight": null,
-      "TradeValue": 684747,
+           "TradeValue": 684747,
       "CIFValue": null,
       "FOBValue": null,
       "estCode": 0
     }
+
+{"pfCode":"H5","yr":2017,"period":2017,"periodDesc":"2017","aggrLevel":6,"IsLeaf":1,"rgCode":1,"rgDesc":"Import","rtCode":699,"rtTitle":"India","rt3ISO":"IND","ptCode":76,"ptTitle":"Brazil","pt3ISO":"BRA","ptCode2":null,"ptTitle2":"","pt3ISO2":"","cstCode":"",
+"cstDesc":"","motCode":"","motDesc":"","cmdCode":"010511","cmdDescE":"Poultry; live, fowls of the species Gallus domesticus, weighing not more than 185g","qtCode":5,"qtDesc":"Number of items","qtAltCode":null,"qtAltDesc":"","TradeQuantity":16919,"AltQuantity":null,"NetWeight":null,"GrossWeight":null,"TradeValue":549423,"CIFValue":null,"FOBValue":null,"estCode":4},
+{
+"pfCode":"H5",
+"yr":2017,
+"period":2017,
+"periodDesc":"2017",
+"aggrLevel":6,
+"IsLeaf":1,
+"rgCode":1,
+"rgDesc":"Import",
+"rtCode":699,
+"rtTitle":"India",
+"rt3ISO":"IND",
+"ptCode":76,
+"ptTitle":"Brazil",
+"pt3ISO":"BRA",
+"ptCode2":null,
+"ptTitle2":"",
+"pt3ISO2":"",
+"cstCode":"",
+"cstDesc":"",
+"motCode":"",
+"motDesc":"",
+"cmdCode":"010511",
+"cmdDescE":"Poultry; live, fowls of the species Gallus domesticus, weighing not more than 185g",
+"qtCode":5,
+"qtDesc":"Number of items",
+"qtAltCode":null,
+"qtAltDesc":"",
+"TradeQuantity":16919,
+"AltQuantity":null,
+"NetWeight":null,
+"GrossWeight":null,
+"TradeValue":549423,
+"CIFValue":null,
+"FOBValue":null,
+"estCode":4
+},
 
     http://dataviva.info/en/trade_partner/asind/international-trade?menu=new-api-exports-municipality-stacked&url=secex%2Fproduct%2Fvalue%3Fvalues%3Dvalue%2Bkg%26group%3Dproduct_section%26depths%3Dproduct_section%2Bproduct%26type%3Dexport%26wld%3D361
 
