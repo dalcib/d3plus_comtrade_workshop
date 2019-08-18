@@ -1,4 +1,4 @@
-interface Viz {
+interface Vizz {
   render(callback?: Function): void
   active(value?: Function): void
   aggs(value?: Object): void
